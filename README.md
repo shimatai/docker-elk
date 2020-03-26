@@ -43,6 +43,8 @@ By default, this stack exposes the following ports:
 
 ## Logback Configuration
 
+Configure logback framework to send data to logstash and visualize it in Kibana web console.
+
 [How to configure logback in your Java Maven application](https://lankydan.dev/2019/01/09/configuring-logback-with-spring-boot)
 
 ```xml
