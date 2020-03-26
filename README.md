@@ -5,7 +5,7 @@
 All stack has been updated to version 7.6.1
 
 ## Get Started
-Do you wanna a simple way to raise a ELK stack?
+Do you wanna a simple way to set up a ELK stack?
 
 Just pull this repository:
 
