@@ -59,9 +59,9 @@ Configure logback framework to send data to logstash and visualize it in Kibana 
 
 	<appender name="SIZE_AND_TIME_BASED_FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>broker.log</file>
+		<file>application.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>./logs/broker.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<fileNamePattern>./logs/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
 			<maxHistory>10</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<maxFileSize>102400KB</maxFileSize>
