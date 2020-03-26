@@ -4,4 +4,6 @@
 #
 server.name: kibana
 server.host: "0"
-elasticsearch.url: http://elasticsearch:9200
+# Deprecated in version 7.6.x
+#elasticsearch.url: http://elasticsearch:9200
+elasticsearch.hosts: ["http://elasticsearch:9200"]
