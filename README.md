@@ -74,24 +74,24 @@ Configure logback framework to send data to logstash and visualize it in Kibana 
 		</encoder>
 	</appender>
 
-  	<!-- https://github.com/logstash/logstash-logback-encoder -->
-    <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-      <destination>localhost:5000</destination>
-      <!-- encoder is required -->
-      <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+  <!-- https://github.com/logstash/logstash-logback-encoder -->
+      <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <!-- encoder is required -->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
 
-      <keepAliveDuration>5 minutes</keepAliveDuration>
+        <keepAliveDuration>5 minutes</keepAliveDuration>
 
-      <!--
-      <reconnectionDelay>1 second</reconnectionDelay>
-      <writeBufferSize>8192</writeBufferSize>
-      -->
-    </appender>
+        <!--
+        <reconnectionDelay>1 second</reconnectionDelay>
+        <writeBufferSize>8192</writeBufferSize>
+        -->
+      </appender>
 
 	<!-- Levels verbose order (more to less): TRACE - DEBUG - INFO - WARN - ERROR -->
-    <!-- <logger name="org.hibernate" level="TRACE">
-        <appender-ref ref="STASH"/>
-    </logger> -->
+      <!-- <logger name="org.hibernate" level="TRACE">
+          <appender-ref ref="STASH"/>
+      </logger> -->
 
 	<root level="info">
 		<!-- <appender-ref ref="STDOUT"/> -->
