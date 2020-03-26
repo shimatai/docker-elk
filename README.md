@@ -20,7 +20,7 @@ $ docker-compose up
 
 Then, access Kibana web UI at http://localhost:5601
 
-After getting into Kibana web console, you will get the message "Create index pattern - Couldn't find any Elasticsearch data", then you should run this command in terminal:
+After getting into Kibana web console, you will get the message `Create index pattern - Couldn't find any Elasticsearch data`, then you should run this command in terminal:
 
 ```
 curl -XPOST -D- 'http://localhost:5601/api/saved_objects/index-pattern' \
