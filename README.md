@@ -1,4 +1,4 @@
-# ELK Stack -  ElasticSearch, Logstash, and Kibana
+# ELK Stack -  ElasticSearch, Logstash and Kibana
 
 ## Updated to version 7.6.1
 
