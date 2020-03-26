@@ -41,5 +41,64 @@ By default, this stack exposes the following ports:
 
 5601 (TCP): Kibana web UI
 
+## Logback Configuration
+
+[How to configure logback in your Java Maven application](s://lankydan.dev/2019/01/09/configuring-logback-with-spring-boot)
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - %-5level - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SIZE_AND_TIME_BASED_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>broker.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>./logs/broker.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>10</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>102400KB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<encoder>
+			<!-- <pattern>%relative [%thread] %-5level %logger{35} - %msg%n</pattern> -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - %-5level - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- https://github.com/logstash/logstash-logback-encoder -->
+	<appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <!-- encoder is required -->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+
+        <keepAliveDuration>5 minutes</keepAliveDuration>
+
+        <!--
+        <reconnectionDelay>1 second</reconnectionDelay>
+        <writeBufferSize>8192</writeBufferSize>
+        -->
+    </appender>
+
+	<!-- Levels verbose order (more to less): TRACE - DEBUG - INFO - WARN - ERROR -->
+    <!-- <logger name="org.hibernate" level="TRACE">
+        <appender-ref ref="STASH"/>
+    </logger> -->
+
+	<root level="info">
+		<!-- <appender-ref ref="STDOUT"/> -->
+		<appender-ref ref="SIZE_AND_TIME_BASED_FILE" />
+		<appender-ref ref="STASH"/>
+	</root>
+
+</configuration>
+```
+
 ## Tutorial from BogoToBogo
 [Docker ELK : ElasticSearch, Logstash, and Kibana](https://www.bogotobogo.com/DevOps/Docker/Docker_ELK_ElasticSearch_Logstash_Kibana.php)

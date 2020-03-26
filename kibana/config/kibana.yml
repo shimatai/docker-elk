@@ -7,3 +7,5 @@ server.host: "0"
 # Deprecated in version 7.6.x
 #elasticsearch.url: http://elasticsearch:9200
 elasticsearch.hosts: ["http://elasticsearch:9200"]
+#elasticsearch.username: "elastic"
+#elasticsearch.password: "3l4st1c"
