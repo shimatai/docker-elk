@@ -21,8 +21,11 @@ $ docker-compose up
 By default, this stack exposes the following ports:
 
 5000 (TCP): Logstash input listener
+
 9200 (TCP): Elasticsearch REST API
+
 9300 (TCP): Elasticsearch TCP nodes communication
+
 5601 (TCP): Kibana web UI
 
 ## Tutorial from BogoToBogo
