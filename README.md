@@ -74,7 +74,7 @@ Configure logback framework to send data to logstash and visualize it in Kibana 
 		</encoder>
 	</appender>
 
-  <!-- https://github.com/logstash/logstash-logback-encoder -->
+    <!-- https://github.com/logstash/logstash-logback-encoder -->
       <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>localhost:5000</destination>
         <!-- encoder is required -->
@@ -89,9 +89,9 @@ Configure logback framework to send data to logstash and visualize it in Kibana 
       </appender>
 
 	<!-- Levels verbose order (more to less): TRACE - DEBUG - INFO - WARN - ERROR -->
-      <!-- <logger name="org.hibernate" level="TRACE">
-          <appender-ref ref="STASH"/>
-      </logger> -->
+        <!-- <logger name="org.hibernate" level="TRACE">
+            <appender-ref ref="STASH"/>
+        </logger> -->
 
 	<root level="info">
 		<!-- <appender-ref ref="STDOUT"/> -->
