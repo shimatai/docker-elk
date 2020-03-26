@@ -29,7 +29,7 @@ curl -XPOST -D- 'http://localhost:5601/api/saved_objects/index-pattern' \
  -d '{"attributes":{"title":"logstash-*","timeFieldName":"@timestamp"}}'
 ```
 
-This request will create a default index in Kibana, so you application can send data to localhost:5000 (logstash TCP port for incoming log data).
+This request will create a default index in Kibana, so your application can send data to localhost:5000 (logstash TCP port for incoming log data).
 
 By default, this stack exposes the following ports:
 
