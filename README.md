@@ -43,7 +43,7 @@ By default, this stack exposes the following ports:
 
 ## Logback Configuration
 
-[How to configure logback in your Java Maven application](s://lankydan.dev/2019/01/09/configuring-logback-with-spring-boot)
+[How to configure logback in your Java Maven application](https://lankydan.dev/2019/01/09/configuring-logback-with-spring-boot)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
