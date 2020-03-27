@@ -47,6 +47,19 @@ Configure logback framework to send data to logstash and visualize it in Kibana 
 
 [How to configure logback in your Java Maven application](https://lankydan.dev/2019/01/09/configuring-logback-with-spring-boot)
 
+### Maven Dependency
+
+Add the following dependency to your `pom.xml` (`<dependencies />` section):
+
+```xml
+<!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
+<dependency>
+    <groupId>net.logstash.logback</groupId>
+    <artifactId>logstash-logback-encoder</artifactId>
+    <version>6.3</version>
+</dependency>
+```
+
 ### Basic Logback Configuration
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
